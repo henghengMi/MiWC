@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0CE5E7201CF83D9900F57D66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E71F1CF83D9900F57D66 /* main.m */; };
-		0CE5E7231CF83D9900F57D66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E7221CF83D9900F57D66 /* AppDelegate.m */; };
 		0CE5E7261CF83D9900F57D66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E7251CF83D9900F57D66 /* ViewController.m */; };
 		0CE5E7291CF83D9900F57D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E7271CF83D9900F57D66 /* Main.storyboard */; };
 		0CE5E72B1CF83D9900F57D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E72A1CF83D9900F57D66 /* Assets.xcassets */; };
@@ -145,6 +144,15 @@
 		0CE5E9201CF83FB900F57D66 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5E89E1CF83FB900F57D66 /* libidn.a */; };
 		0CE5E9221CF83FCC00F57D66 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5E9211CF83FCC00F57D66 /* libxml2.tbd */; };
 		0CE5E9241CF83FD300F57D66 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE5E9231CF83FD300F57D66 /* libresolv.tbd */; };
+		0CE5E92E1CF842E800F57D66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E92D1CF842E800F57D66 /* AppDelegate.m */; };
+		0CE5E9341CF843A700F57D66 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E9331CF843A700F57D66 /* Login.storyboard */; };
+		0CE5E9371CF848A900F57D66 /* WCOtherLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E9361CF848A900F57D66 /* WCOtherLoginController.m */; };
+		0CE5E9461CF849B100F57D66 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E93B1CF849B100F57D66 /* UIButton+WF.m */; };
+		0CE5E9471CF849B100F57D66 /* UIImage+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E93D1CF849B100F57D66 /* UIImage+WF.m */; };
+		0CE5E9481CF849B100F57D66 /* UIScreen+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E93F1CF849B100F57D66 /* UIScreen+WF.m */; };
+		0CE5E9491CF849B100F57D66 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E9411CF849B100F57D66 /* UIStoryboard+WF.m */; };
+		0CE5E94A1CF849B100F57D66 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E9431CF849B100F57D66 /* UITextField+WF.m */; };
+		0CE5E94B1CF849B100F57D66 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E9451CF849B100F57D66 /* UIView+WF.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,8 +175,6 @@
 /* Begin PBXFileReference section */
 		0CE5E71B1CF83D9800F57D66 /* WC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE5E71F1CF83D9900F57D66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0CE5E7211CF83D9900F57D66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0CE5E7221CF83D9900F57D66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0CE5E7241CF83D9900F57D66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0CE5E7251CF83D9900F57D66 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0CE5E7281CF83D9900F57D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -449,6 +455,24 @@
 		0CE5E9211CF83FCC00F57D66 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		0CE5E9231CF83FD300F57D66 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		0CE5E9251CF8407E00F57D66 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0CE5E92C1CF842E800F57D66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0CE5E92D1CF842E800F57D66 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0CE5E9331CF843A700F57D66 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0CE5E9351CF848A900F57D66 /* WCOtherLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCOtherLoginController.h; sourceTree = "<group>"; };
+		0CE5E9361CF848A900F57D66 /* WCOtherLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCOtherLoginController.m; sourceTree = "<group>"; };
+		0CE5E9391CF849B100F57D66 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
+		0CE5E93A1CF849B100F57D66 /* UIButton+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WF.h"; sourceTree = "<group>"; };
+		0CE5E93B1CF849B100F57D66 /* UIButton+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WF.m"; sourceTree = "<group>"; };
+		0CE5E93C1CF849B100F57D66 /* UIImage+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WF.h"; sourceTree = "<group>"; };
+		0CE5E93D1CF849B100F57D66 /* UIImage+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WF.m"; sourceTree = "<group>"; };
+		0CE5E93E1CF849B100F57D66 /* UIScreen+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+WF.h"; sourceTree = "<group>"; };
+		0CE5E93F1CF849B100F57D66 /* UIScreen+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+WF.m"; sourceTree = "<group>"; };
+		0CE5E9401CF849B100F57D66 /* UIStoryboard+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+WF.h"; sourceTree = "<group>"; };
+		0CE5E9411CF849B100F57D66 /* UIStoryboard+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+WF.m"; sourceTree = "<group>"; };
+		0CE5E9421CF849B100F57D66 /* UITextField+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WF.h"; sourceTree = "<group>"; };
+		0CE5E9431CF849B100F57D66 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
+		0CE5E9441CF849B100F57D66 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
+		0CE5E9451CF849B100F57D66 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,8 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				0CE5E7511CF83FB900F57D66 /* Classes */,
-				0CE5E7211CF83D9900F57D66 /* AppDelegate.h */,
-				0CE5E7221CF83D9900F57D66 /* AppDelegate.m */,
 				0CE5E7241CF83D9900F57D66 /* ViewController.h */,
 				0CE5E7251CF83D9900F57D66 /* ViewController.m */,
 				0CE5E71E1CF83D9900F57D66 /* Supporting Files */,
@@ -517,7 +539,6 @@
 		0CE5E71E1CF83D9900F57D66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0CE5E7271CF83D9900F57D66 /* Main.storyboard */,
 				0CE5E72A1CF83D9900F57D66 /* Assets.xcassets */,
 				0CE5E72C1CF83D9900F57D66 /* LaunchScreen.storyboard */,
 				0CE5E72F1CF83D9900F57D66 /* Info.plist */,
@@ -548,6 +569,9 @@
 		0CE5E7511CF83FB900F57D66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0CE5E9281CF842A600F57D66 /* Other */,
+				0CE5E9261CF8429B00F57D66 /* login【登录】 */,
+				0CE5E9271CF8429B00F57D66 /* Main【主要】 */,
 				0CE5E7521CF83FB900F57D66 /* Lib */,
 			);
 			path = Classes;
@@ -556,6 +580,7 @@
 		0CE5E7521CF83FB900F57D66 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				0CE5E9381CF849B100F57D66 /* Category */,
 				0CE5E7531CF83FB900F57D66 /* XMPP */,
 			);
 			path = Lib;
@@ -1345,6 +1370,53 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
+		0CE5E9261CF8429B00F57D66 /* login【登录】 */ = {
+			isa = PBXGroup;
+			children = (
+				0CE5E9331CF843A700F57D66 /* Login.storyboard */,
+				0CE5E9351CF848A900F57D66 /* WCOtherLoginController.h */,
+				0CE5E9361CF848A900F57D66 /* WCOtherLoginController.m */,
+			);
+			path = "login【登录】";
+			sourceTree = "<group>";
+		};
+		0CE5E9271CF8429B00F57D66 /* Main【主要】 */ = {
+			isa = PBXGroup;
+			children = (
+				0CE5E7271CF83D9900F57D66 /* Main.storyboard */,
+			);
+			path = "Main【主要】";
+			sourceTree = "<group>";
+		};
+		0CE5E9281CF842A600F57D66 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0CE5E92C1CF842E800F57D66 /* AppDelegate.h */,
+				0CE5E92D1CF842E800F57D66 /* AppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0CE5E9381CF849B100F57D66 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0CE5E9391CF849B100F57D66 /* CategoryWF.h */,
+				0CE5E93A1CF849B100F57D66 /* UIButton+WF.h */,
+				0CE5E93B1CF849B100F57D66 /* UIButton+WF.m */,
+				0CE5E93C1CF849B100F57D66 /* UIImage+WF.h */,
+				0CE5E93D1CF849B100F57D66 /* UIImage+WF.m */,
+				0CE5E93E1CF849B100F57D66 /* UIScreen+WF.h */,
+				0CE5E93F1CF849B100F57D66 /* UIScreen+WF.m */,
+				0CE5E9401CF849B100F57D66 /* UIStoryboard+WF.h */,
+				0CE5E9411CF849B100F57D66 /* UIStoryboard+WF.m */,
+				0CE5E9421CF849B100F57D66 /* UITextField+WF.h */,
+				0CE5E9431CF849B100F57D66 /* UITextField+WF.m */,
+				0CE5E9441CF849B100F57D66 /* UIView+WF.h */,
+				0CE5E9451CF849B100F57D66 /* UIView+WF.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1450,6 +1522,7 @@
 			files = (
 				0CE5E91F1CF83FB900F57D66 /* build-libidn.sh in Resources */,
 				0CE5E72E1CF83D9900F57D66 /* LaunchScreen.storyboard in Resources */,
+				0CE5E9341CF843A700F57D66 /* Login.storyboard in Resources */,
 				0CE5E72B1CF83D9900F57D66 /* Assets.xcassets in Resources */,
 				0CE5E91A1CF83FB900F57D66 /* README.txt in Resources */,
 				0CE5E7291CF83D9900F57D66 /* Main.storyboard in Resources */,
@@ -1500,11 +1573,11 @@
 				0CE5E91D1CF83FB900F57D66 /* DDXMLElement.m in Sources */,
 				0CE5E8FA1CF83FB900F57D66 /* XMPPvCardAvatarModule.m in Sources */,
 				0CE5E8D81CF83FB900F57D66 /* XMPPvCardCoreDataStorage.m in Sources */,
+				0CE5E92E1CF842E800F57D66 /* AppDelegate.m in Sources */,
 				0CE5E8D21CF83FB900F57D66 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				0CE5E7261CF83D9900F57D66 /* ViewController.m in Sources */,
 				0CE5E8F11CF83FB900F57D66 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				0CE5E8DC1CF83FB900F57D66 /* XMPPvCardTempAdr.m in Sources */,
-				0CE5E7231CF83D9900F57D66 /* AppDelegate.m in Sources */,
 				0CE5E8C61CF83FB900F57D66 /* XMPPLastActivity.m in Sources */,
 				0CE5E8F31CF83FB900F57D66 /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				0CE5E8BD1CF83FB900F57D66 /* XMPPResourceMemoryStorageObject.m in Sources */,
@@ -1512,6 +1585,7 @@
 				0CE5E8B51CF83FB900F57D66 /* XMPPGoogleSharedStatus.m in Sources */,
 				0CE5E8CC1CF83FB900F57D66 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				0CE5E8C01CF83FB900F57D66 /* XMPPRoster.m in Sources */,
+				0CE5E9491CF849B100F57D66 /* UIStoryboard+WF.m in Sources */,
 				0CE5E90F1CF83FB900F57D66 /* XMPPIDTracker.m in Sources */,
 				0CE5E8EA1CF83FB900F57D66 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
 				0CE5E91E1CF83FB900F57D66 /* DDXMLNode.m in Sources */,
@@ -1531,6 +1605,7 @@
 				0CE5E9161CF83FB900F57D66 /* DDLog.m in Sources */,
 				0CE5E9181CF83FB900F57D66 /* ContextFilterLogFormatter.m in Sources */,
 				0CE5E9151CF83FB900F57D66 /* DDFileLogger.m in Sources */,
+				0CE5E9461CF849B100F57D66 /* UIButton+WF.m in Sources */,
 				0CE5E9091CF83FB900F57D66 /* XMPPMessage+XEP_0308.m in Sources */,
 				0CE5E8C51CF83FB900F57D66 /* XMPPIQ+LastActivity.m in Sources */,
 				0CE5E9041CF83FB900F57D66 /* NSXMLElement+XEP_0203.m in Sources */,
@@ -1545,10 +1620,13 @@
 				0CE5E8F21CF83FB900F57D66 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				0CE5E90C1CF83FB900F57D66 /* DDList.m in Sources */,
 				0CE5E9191CF83FB900F57D66 /* DispatchQueueLogFormatter.m in Sources */,
+				0CE5E94A1CF849B100F57D66 /* UITextField+WF.m in Sources */,
 				0CE5E8B01CF83FB900F57D66 /* XMPPParser.m in Sources */,
+				0CE5E9481CF849B100F57D66 /* UIScreen+WF.m in Sources */,
 				0CE5E8B21CF83FB900F57D66 /* XMPPStream.m in Sources */,
 				0CE5E8A51CF83FB900F57D66 /* XMPPPlainAuthentication.m in Sources */,
 				0CE5E9011CF83FB900F57D66 /* XMPPPing.m in Sources */,
+				0CE5E94B1CF849B100F57D66 /* UIView+WF.m in Sources */,
 				0CE5E9031CF83FB900F57D66 /* XMPPTime.m in Sources */,
 				0CE5E8C71CF83FB900F57D66 /* XMPPPrivacy.m in Sources */,
 				0CE5E8F51CF83FB900F57D66 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
@@ -1580,9 +1658,11 @@
 				0CE5E8E91CF83FB900F57D66 /* XMPPMessage+XEP_0066.m in Sources */,
 				0CE5E8AC1CF83FB900F57D66 /* XMPPIQ.m in Sources */,
 				0CE5E8E51CF83FB900F57D66 /* XMPPIQ+XEP_0060.m in Sources */,
+				0CE5E9371CF848A900F57D66 /* WCOtherLoginController.m in Sources */,
 				0CE5E8A11CF83FB900F57D66 /* XMPPAnonymousAuthentication.m in Sources */,
 				0CE5E9141CF83FB900F57D66 /* DDASLLogger.m in Sources */,
 				0CE5E8DB1CF83FB900F57D66 /* XMPPvCardTemp.m in Sources */,
+				0CE5E9471CF849B100F57D66 /* UIImage+WF.m in Sources */,
 				0CE5E8C21CF83FB900F57D66 /* XMPPIQ+JabberRPC.m in Sources */,
 				0CE5E8BE1CF83FB900F57D66 /* XMPPRosterMemoryStorage.m in Sources */,
 				0CE5E8D51CF83FB900F57D66 /* XMPPRoom.m in Sources */,
@@ -1646,6 +1726,7 @@
 				0CE5E7281CF83D9900F57D66 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		0CE5E72C1CF83D9900F57D66 /* LaunchScreen.storyboard */ = {
