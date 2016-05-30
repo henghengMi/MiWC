@@ -8,13 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    XMPPLoginStatusSuccess = 0,
+    XMPPLoginStatusFailure,
+    XMPPLoginConnectError
+    
+}XMPPLoginStatus;
+
+typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (copy, nonatomic)XMPPLoginResultBlock loginResultBlock;
+
+
 -(void)logout;
 
--(void)login;
+-(void)loginWithResultBlock:(XMPPLoginResultBlock ) loginResultBlock;
 
 @end
 

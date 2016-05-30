@@ -16,8 +16,8 @@
 }
 
 
-//-(void)setResizeN_BG:(NSString *)nbg H_BG:(NSString *)hbg{
-//    [self setBackgroundImage:[UIImage stretchedImageWithName:nbg] forState:UIControlStateNormal];
-//    [self setBackgroundImage:[UIImage stretchedImageWithName:hbg] forState:UIControlStateHighlighted];
-//}
+-(void)setResizeN_BG:(NSString *)nbg H_BG:(NSString *)hbg{
+    [self setBackgroundImage:[UIImage stretchedImageWithName:nbg] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage stretchedImageWithName:hbg] forState:UIControlStateHighlighted];
+}
 @end

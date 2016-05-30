@@ -143,12 +143,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-zA-MXb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-zA-MXb">
                                         <rect key="frame" x="0.0" y="145" width="329" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ttK-Fa-SrN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="登录"/>
                                         <connections>
                                             <action selector="loginBtnClick:" destination="N4B-Zh-77S" eventType="touchUpInside" id="Xqw-NQ-r1y"/>
@@ -181,6 +180,7 @@
                     <connections>
                         <outlet property="accountTF" destination="Qag-51-153" id="gC9-Rq-BEx"/>
                         <outlet property="leftConstraints" destination="L4k-lF-4Wm" id="DXK-xi-JaT"/>
+                        <outlet property="loginBtn" destination="xA1-zA-MXb" id="Bgl-Ii-S9L"/>
                         <outlet property="pswTF" destination="Icd-3s-kZl" id="dvJ-HV-3a7"/>
                         <outlet property="rightConstraint" destination="Nud-tJ-6jk" id="RrE-OB-HsX"/>
                     </connections>

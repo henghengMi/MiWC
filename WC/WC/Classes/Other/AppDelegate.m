@@ -106,6 +106,9 @@
 
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
+    if (self.loginResultBlock) {
+        self.loginResultBlock(XMPPLoginConnectError);
+    }
     NSLog(@"与主机断开连接 %@",error);
 }
 
@@ -114,12 +117,22 @@
 {
     NSLog(@"授权成功");
     [self sendOnlineToHost];
+    
+    // 登录成功来到主界面
+    if (self.loginResultBlock) {
+        self.loginResultBlock(XMPPLoginStatusSuccess);
+    }
+    
 }
 
 #pragma mark 授权失败
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
 {
+ 
     NSLog(@"授权失败 %@",error);
+    if (self.loginResultBlock) {
+        self.loginResultBlock(XMPPLoginStatusFailure);
+    }
 }
 
 #pragma mark 公共方法
@@ -134,7 +147,15 @@
 }
 
 #pragma mark 登录
--(void)login {
+-(void)loginWithResultBlock:(XMPPLoginResultBlock)loginResultBlock{
+    // 保留Block
+    self.loginResultBlock = loginResultBlock;
+    
+    // 如果以前连接过服务，要断开
+    if ([_xmppStream isConnected]) {
+        [_xmppStream disconnect];
+    }
+    
     [self connectToHost];
 }
 @end
