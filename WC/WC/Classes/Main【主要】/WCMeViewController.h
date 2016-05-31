@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WCMeViewController : UIViewController
+@interface WCMeViewController : UITableViewController
 
 @end

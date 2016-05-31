@@ -12,6 +12,8 @@
 #define pswKey @"psw"
 #define loginStatusKey @"loginStatus"
 
+static NSString *domain = @"hengheng.local";
+
 @implementation UserInfo
 
 singleton_implementation(UserInfo)
@@ -31,6 +33,11 @@ singleton_implementation(UserInfo)
     [USERDEFAULTS setObject:self.password forKey:pswKey];
     [USERDEFAULTS setBool:self.logined forKey:loginStatusKey];
     [USERDEFAULTS synchronize];
+}
+
+- (NSString *)jid
+{
+    return [NSString stringWithFormat:@"%@@%@",self.account,domain];
 }
 
 @end

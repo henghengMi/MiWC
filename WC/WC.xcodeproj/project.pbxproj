@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C53C0A41CFD392300D7B46C /* WCUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0A31CFD392300D7B46C /* WCUserInfoController.m */; };
+		0C53C0A71CFD683B00D7B46C /* WCVCarEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */; };
+		0C53C0AD1CFD8A3900D7B46C /* WCContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0AC1CFD8A3900D7B46C /* WCContactController.m */; };
 		0CE5E7201CF83D9900F57D66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E71F1CF83D9900F57D66 /* main.m */; };
 		0CE5E7291CF83D9900F57D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E7271CF83D9900F57D66 /* Main.storyboard */; };
 		0CE5E72B1CF83D9900F57D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E72A1CF83D9900F57D66 /* Assets.xcassets */; };
@@ -183,6 +186,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C53C0A21CFD392300D7B46C /* WCUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCUserInfoController.h; sourceTree = "<group>"; };
+		0C53C0A31CFD392300D7B46C /* WCUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCUserInfoController.m; sourceTree = "<group>"; };
+		0C53C0A51CFD683B00D7B46C /* WCVCarEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCVCarEditController.h; sourceTree = "<group>"; };
+		0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCVCarEditController.m; sourceTree = "<group>"; };
+		0C53C0AB1CFD8A3900D7B46C /* WCContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactController.h; sourceTree = "<group>"; };
+		0C53C0AC1CFD8A3900D7B46C /* WCContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactController.m; sourceTree = "<group>"; };
 		0CE5E71B1CF83D9800F57D66 /* WC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE5E71F1CF83D9900F57D66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0CE5E7281CF83D9900F57D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -754,14 +763,14 @@
 				0CE5E78A1CF83FB900F57D66 /* CoreDataStorage */,
 				0CE5E78E1CF83FB900F57D66 /* GoogleSharedStatus */,
 				0CE5E7911CF83FB900F57D66 /* ProcessOne */,
-				0CE5E7941CF83FB900F57D66 /* Reconnect */,
-				0CE5E7971CF83FB900F57D66 /* Roster */,
+				0CE5E7941CF83FB900F57D66 /* Reconnect（自动连接模块） */,
+				0CE5E7971CF83FB900F57D66 /* Roster（花名册模块） */,
 				0CE5E7AF1CF83FB900F57D66 /* SystemInputActivityMonitor */,
 				0CE5E7B21CF83FB900F57D66 /* XEP-0009 */,
 				0CE5E7B91CF83FB900F57D66 /* XEP-0012 */,
 				0CE5E7BE1CF83FB900F57D66 /* XEP-0016 */,
 				0CE5E7C11CF83FB900F57D66 /* XEP-0045 */,
-				0CE5E7E51CF83FB900F57D66 /* XEP-0054 */,
+				0CE5E7E51CF83FB900F57D66 /* XEP-0054（电子名片模块） */,
 				0CE5E8011CF83FB900F57D66 /* XEP-0059 */,
 				0CE5E8061CF83FB900F57D66 /* XEP-0060 */,
 				0CE5E80B1CF83FB900F57D66 /* XEP-0065 */,
@@ -827,16 +836,17 @@
 			path = ProcessOne;
 			sourceTree = "<group>";
 		};
-		0CE5E7941CF83FB900F57D66 /* Reconnect */ = {
+		0CE5E7941CF83FB900F57D66 /* Reconnect（自动连接模块） */ = {
 			isa = PBXGroup;
 			children = (
 				0CE5E7951CF83FB900F57D66 /* XMPPReconnect.h */,
 				0CE5E7961CF83FB900F57D66 /* XMPPReconnect.m */,
 			);
+			name = "Reconnect（自动连接模块）";
 			path = Reconnect;
 			sourceTree = "<group>";
 		};
-		0CE5E7971CF83FB900F57D66 /* Roster */ = {
+		0CE5E7971CF83FB900F57D66 /* Roster（花名册模块） */ = {
 			isa = PBXGroup;
 			children = (
 				0CE5E7981CF83FB900F57D66 /* CoreDataStorage */,
@@ -847,6 +857,7 @@
 				0CE5E7AD1CF83FB900F57D66 /* XMPPRosterPrivate.h */,
 				0CE5E7AE1CF83FB900F57D66 /* XMPPUser.h */,
 			);
+			name = "Roster（花名册模块）";
 			path = Roster;
 			sourceTree = "<group>";
 		};
@@ -983,7 +994,7 @@
 			path = MemoryStorage;
 			sourceTree = "<group>";
 		};
-		0CE5E7E51CF83FB900F57D66 /* XEP-0054 */ = {
+		0CE5E7E51CF83FB900F57D66 /* XEP-0054（电子名片模块） */ = {
 			isa = PBXGroup;
 			children = (
 				0CE5E7E61CF83FB900F57D66 /* CoreDataStorage */,
@@ -1004,6 +1015,7 @@
 				0CE5E7FF1CF83FB900F57D66 /* XMPPvCardTempTel.h */,
 				0CE5E8001CF83FB900F57D66 /* XMPPvCardTempTel.m */,
 			);
+			name = "XEP-0054（电子名片模块）";
 			path = "XEP-0054";
 			sourceTree = "<group>";
 		};
@@ -1421,9 +1433,15 @@
 			children = (
 				0CFE826A1CFBD96600B855B5 /* WCHomeViewController.h */,
 				0CFE826B1CFBD96600B855B5 /* WCHomeViewController.m */,
+				0C53C0AB1CFD8A3900D7B46C /* WCContactController.h */,
+				0C53C0AC1CFD8A3900D7B46C /* WCContactController.m */,
 				0CE5E7271CF83D9900F57D66 /* Main.storyboard */,
 				0CFE82721CFBE67B00B855B5 /* WCMeViewController.h */,
 				0CFE82731CFBE67B00B855B5 /* WCMeViewController.m */,
+				0C53C0A21CFD392300D7B46C /* WCUserInfoController.h */,
+				0C53C0A31CFD392300D7B46C /* WCUserInfoController.m */,
+				0C53C0A51CFD683B00D7B46C /* WCVCarEditController.h */,
+				0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */,
 			);
 			path = "Main【主要】";
 			sourceTree = "<group>";
@@ -1656,6 +1674,7 @@
 				0CE5E8C31CF83FB900F57D66 /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				0CE5E8A31CF83FB900F57D66 /* XMPPDeprecatedPlainAuthentication.m in Sources */,
 				0CE5E91D1CF83FB900F57D66 /* DDXMLElement.m in Sources */,
+				0C53C0A71CFD683B00D7B46C /* WCVCarEditController.m in Sources */,
 				0CE5E8FA1CF83FB900F57D66 /* XMPPvCardAvatarModule.m in Sources */,
 				0CE5E8D81CF83FB900F57D66 /* XMPPvCardCoreDataStorage.m in Sources */,
 				0CE5E92E1CF842E800F57D66 /* AppDelegate.m in Sources */,
@@ -1714,6 +1733,7 @@
 				0CE5E9481CF849B100F57D66 /* UIScreen+WF.m in Sources */,
 				0CE5E8B21CF83FB900F57D66 /* XMPPStream.m in Sources */,
 				0CE5E8A51CF83FB900F57D66 /* XMPPPlainAuthentication.m in Sources */,
+				0C53C0A41CFD392300D7B46C /* WCUserInfoController.m in Sources */,
 				0CE5E9011CF83FB900F57D66 /* XMPPPing.m in Sources */,
 				0CFB31561CF9470D0017E776 /* MBProgressHUD+MJ.m in Sources */,
 				0CE5E94B1CF849B100F57D66 /* UIView+WF.m in Sources */,
@@ -1733,6 +1753,7 @@
 				0CE5E8EF1CF83FB900F57D66 /* NSString+XEP_0106.m in Sources */,
 				0CE5E8D41CF83FB900F57D66 /* XMPPMUC.m in Sources */,
 				0CE5E8B41CF83FB900F57D66 /* XMPPCoreDataStorage.m in Sources */,
+				0C53C0AD1CFD8A3900D7B46C /* WCContactController.m in Sources */,
 				0CFE82891CFC330D00B855B5 /* WCXMPPTool.m in Sources */,
 				0CE5E8A71CF83FB900F57D66 /* XMPPXOAuth2Google.m in Sources */,
 				0CE5E8AA1CF83FB900F57D66 /* NSXMLElement+XMPP.m in Sources */,
@@ -1920,6 +1941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WC/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -1939,6 +1961,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WC/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;

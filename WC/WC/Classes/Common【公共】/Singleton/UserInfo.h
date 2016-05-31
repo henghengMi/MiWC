@@ -19,6 +19,7 @@ singleton_interface(UserInfo);
 @property(nonatomic, copy) NSString * registAccount;
 @property(nonatomic, copy) NSString * registPassword;
 @property(nonatomic, assign) BOOL logined;
+@property(nonatomic, copy) NSString * jid;
 
 
 

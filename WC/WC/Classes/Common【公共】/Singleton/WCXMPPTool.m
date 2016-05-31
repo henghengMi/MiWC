@@ -8,10 +8,19 @@
 
 #import "WCXMPPTool.h"
 #import "WCNavgationController.h"
-#import "XMPP.h"
+#import "XMPPFramework.h"
 #import "UIStoryboard+WF.h"
 
 @interface WCXMPPTool ()<XMPPStreamDelegate>
+{
+
+    XMPPvCardCoreDataStorage *_vCardStorage; // 电子名片的数据存储
+    XMPPvCardAvatarModule *_vCardAvatar; // 头像模块
+    XMPPReconnect *_reconnect; // 自动连接模块
+    XMPPRoster *_roster; // 花名册
+
+
+}
 
 @property(nonatomic, strong) XMPPStream  * xmppStream;
 
@@ -39,6 +48,27 @@ singleton_implementation(WCXMPPTool)
 -(void)setupXMPPStream
 {
     _xmppStream = [[XMPPStream alloc] init];
+    
+    // 注意：每个模块都要激活
+    
+    // 添加自动连接模块
+    _reconnect = [[XMPPReconnect alloc] init];
+    [_reconnect activate:_xmppStream];
+    
+    // 添加电子名片模块
+    _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
+    [_vCard activate:_xmppStream];
+    
+    // 头像模块
+    _vCardAvatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
+    [_vCardAvatar activate:_xmppStream];
+    
+    // 花名册模块
+    _rosterStorage = [XMPPRosterCoreDataStorage sharedInstance];
+    _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorage];
+    [_roster activate:_xmppStream];
+    
     // 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
@@ -74,7 +104,6 @@ singleton_implementation(WCXMPPTool)
     }
 }
 
-
 #pragma mark 3.连接到服务成功后，再发送密码授权
 -(void)sendPwdToHost {
     NSLog(@"发送密码授权");
@@ -86,7 +115,6 @@ singleton_implementation(WCXMPPTool)
         NSLog(@"%@",err);
     }
 }
-
 
 #pragma mark  4.授权成功后，发送"在线" 消息
 -(void)sendOnlineToHost {
@@ -189,7 +217,6 @@ singleton_implementation(WCXMPPTool)
     [self connectToHost];
 }
 
-
 #pragma mark 注册
 -(void)registWithResultBlock:(XMPPLoginResultBlock)loginResultBlock{
     // 保留Block
@@ -202,5 +229,35 @@ singleton_implementation(WCXMPPTool)
     
     [self connectToHost];
 }
+
+
+- (void)dealloc
+{
+    [self teardownXMPP];
+}
+
+#pragma mark 释放XMPP相关资源
+-(void)teardownXMPP
+{
+    // 移除代理
+    [_xmppStream removeDelegate:self];
+    // 停止模块
+    [_reconnect deactivate];
+    [_vCard deactivate];
+    [_vCardAvatar deactivate];
+    [_roster deactivate];
+    
+    // 断开连接
+    [_xmppStream disconnect];
+    // 清空资源
+    _reconnect = nil;
+    _vCard = nil;
+    _vCardStorage = nil;
+    _vCardAvatar = nil;
+    _xmppStream = nil;
+    _roster = nil;
+    
+}
+
 @end
 

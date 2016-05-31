@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "WCRegistViewController.h"
 #import "WCNavgationController.h"
+
 @interface LoginViewController ()<WCRegistViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
@@ -21,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    
     
     // 设置TextField和Btn的样式
     self.pswTF.background = [UIImage stretchedImageWithName:@"operationbox_text"];
@@ -53,8 +57,10 @@
      id desVC = segue.destinationViewController;
     if ([desVC isKindOfClass : [WCNavgationController class]]) {
         WCNavgationController *nav = (WCNavgationController *)desVC;
-       WCRegistViewController *registVC = (WCRegistViewController *)nav.topViewController;
-        registVC.delegate = self;
+        if ([nav.topViewController isKindOfClass:[WCRegistViewController class]]) {
+            WCRegistViewController *registVC = (WCRegistViewController *)nav.topViewController;
+            registVC.delegate = self;
+        }
     }
 }
 
