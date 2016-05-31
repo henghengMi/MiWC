@@ -9,6 +9,8 @@
 #import "WCOtherLoginController.h"
 #import "AppDelegate.h"
 #import "UIButton+WF.h"
+#import "UserInfo.h"
+
 @interface WCOtherLoginController ()
 @property (weak, nonatomic) IBOutlet UITextField *accountTF;
 @property (weak, nonatomic) IBOutlet UITextField *pswTF;
@@ -20,6 +22,9 @@
 
 @implementation WCOtherLoginController
 
+- (IBAction)dismiss:(UIBarButtonItem *)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,62 +35,66 @@
     }
     self.accountTF.background = [UIImage stretchedImageWithName:@"operationbox_text"];
     self.pswTF.background = [UIImage stretchedImageWithName:@"operationbox_text"];
-    self.accountTF.text = [USERDEFAULTS objectForKey:@"User"];
-    self.pswTF.text = [USERDEFAULTS objectForKey:@"Psw"];
     [self.loginBtn setResizeN_BG:@"fts_green_btn" H_BG:@"fts_green_btn_HL"];
+
     
+    // 取出账号密码
+//    [[UserInfo sharedUserInfo] loadUserInfoFormSanBox];
+//    self.accountTF.text = [UserInfo sharedUserInfo].account;
+//    self.pswTF.text = [UserInfo sharedUserInfo].password;
+
 }
 
-#pragma mark 登录
+//#pragma mark 登录
 - (IBAction)loginBtnClick:(UIButton *)sender {
     
-    [MBProgressHUD showMessage:@"登录中.."];
+    UserInfo *userInfo = [UserInfo sharedUserInfo];
+    userInfo.account = self.accountTF.text ;
+    userInfo.password = self.pswTF.text;
     
-    [USERDEFAULTS setObject:self.accountTF.text forKey:@"User"];
-    [USERDEFAULTS setObject:self.pswTF.text forKey:@"Psw"];
-    [USERDEFAULTS synchronize];
-    
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    
-    __weak typeof (self) weakSelf = self;
-    [app loginWithResultBlock:^(XMPPLoginStatus status) {
-        [weakSelf loginHanddleWithStatus:status];
-    }];
+    [super login];
 }
-
-- (void)loginHanddleWithStatus:(XMPPLoginStatus)status
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-     [MBProgressHUD hideHUD];
-        __weak typeof (self) weakSelf = self;
-
-        switch (status) {
-            case XMPPLoginStatusSuccess:
-            {
-                NSLog(@"登录成功");
-                [MBProgressHUD showSuccess:@"登录成功"];
-                [weakSelf dismissViewControllerAnimated:YES completion:nil];
-                UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                weakSelf.view.window.rootViewController = mainStoryboard.instantiateInitialViewController;
-            }
-                break;
-                
-            case XMPPLoginStatusFailure:
-            {
-                NSLog(@"登录失败");
-                [MBProgressHUD showError:@"账号或密码不正确"];
-            }
-            case XMPPLoginConnectError:
-            {
-                NSLog(@"连接失败或连接中");
-                [MBProgressHUD showError:@"连接失败或连接中"];
-            }
-            default:
-                break;
-        }
-    });
-
-}
+//
+//- (void)loginHanddleWithStatus:(XMPPLoginStatus)status
+//{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//     [MBProgressHUD hideHUD];
+//
+//        switch (status) {
+//            case XMPPLoginStatusSuccess:
+//            {
+//                NSLog(@"登录成功");
+//                [self loginSuccessHanddle];
+//            }
+//                break;
+//                
+//            case XMPPLoginStatusFailure:
+//            {
+//                NSLog(@"登录失败");
+//                [MBProgressHUD showError:@"账号或密码不正确"];
+//            }
+//
+//            default:
+//                break;
+//        }
+//    });
+//
+//}
+//
+//-(void)loginSuccessHanddle
+//{
+//    __weak typeof (self) weakSelf = self;
+//    [MBProgressHUD showSuccess:@"登录成功"];
+//    // 保存账号和密码
+//    
+//    // 单例存储账号密码
+//    [UserInfo sharedUserInfo].logined = YES;
+//    [[UserInfo sharedUserInfo] saveUserInfoToSanBox];
+//    
+//    [weakSelf dismissViewControllerAnimated:YES completion:nil];
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    weakSelf.view.window.rootViewController = mainStoryboard.instantiateInitialViewController;
+//}
 
 - (void)dealloc
 {

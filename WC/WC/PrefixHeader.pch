@@ -15,7 +15,13 @@
 #import <UIKit/UIKit.h>
 #import "CategoryWF.h"
 
+#import "UserInfo.h"
+
+
 #import "MBProgressHUD+MJ.h"
+
+#import "WCXMPPTool.h"
+
 /** 数据本地化 */
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]
 

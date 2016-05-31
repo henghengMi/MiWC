@@ -8,25 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
-    XMPPLoginStatusSuccess = 0,
-    XMPPLoginStatusFailure,
-    XMPPLoginConnectError
-    
-}XMPPLoginStatus;
+//typedef enum {
+//    XMPPLoginStatusSuccess = 0,
+//    XMPPLoginStatusFailure,
+//    XMPPRegistStatusSuccess,
+//    XMPPRegistStatusFailure,
+//    XMPPLoginConnectError
+//    
+//}XMPPLoginStatus;
 
-typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
+//typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (copy, nonatomic)XMPPLoginResultBlock loginResultBlock;
+//@property (copy, nonatomic)XMPPLoginResultBlock loginResultBlock;
 
-
--(void)logout;
-
--(void)loginWithResultBlock:(XMPPLoginResultBlock ) loginResultBlock;
+///**
+// *  注册标识 YES 注册 / NO 登录
+// */
+//@property (nonatomic, assign,getter=isRegisterOperation) BOOL  registerOperation;//注册操作
+//
+//-(void)logout;
+//
+//-(void)loginWithResultBlock:(XMPPLoginResultBlock ) loginResultBlock;
+//
+//-(void)registWithResultBlock:(XMPPLoginResultBlock ) loginResultBlock;
 
 @end
 
