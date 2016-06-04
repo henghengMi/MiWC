@@ -9,8 +9,9 @@
 #import "WCContactController.h"
 #import "WCXMPPTool.h"
 
-@interface WCContactController ()
+@interface WCContactController ()<NSFetchedResultsControllerDelegate>
 @property(nonatomic, strong) NSArray * friends;
+@property(nonatomic, strong) NSFetchedResultsController * resultController;
 @end
 
 @implementation WCContactController
@@ -40,8 +41,22 @@
     requst.sortDescriptors = @[sort];
     
     // 4. 执行请求获取数据
-    self.friends = [context executeFetchRequest:requst error:nil];
-     NSLog(@"%@",self.friends);
+//    self.friends = [context executeFetchRequest:requst error:nil];
+//     NSLog(@"%@",self.friends);
+    
+    _resultController = [[NSFetchedResultsController alloc] initWithFetchRequest:requst managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    _resultController.delegate = self; // 数据库改变会通知代理
+    NSError *err = nil;
+    [_resultController performFetch:&err];
+    if (err) {
+         NSLog(@"err:%@",err);
+    }
+}
+
+#pragma mark 数据库改变会通知此方法
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+     NSLog(@"数据发生改变");
+    [self.tableView reloadData];
 }
 
 #pragma mark tableView dataSource & dalegate
@@ -52,20 +67,31 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.friends.count;
+    return self.resultController.fetchedObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /**
+     sectionNum
+     0 在线
+     1 离开
+     2 离线
+     */
+    
     static NSString *ID = @"id";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    XMPPUserCoreDataStorageObject *object = self.friends[indexPath.row];
-    cell.textLabel.text = object.nickname;
-    cell.detailTextLabel.text = object.jidStr;
+    XMPPUserCoreDataStorageObject *friend = self.resultController.fetchedObjects[indexPath.row];
+    
+    cell.textLabel.text = friend.jidStr;
+    
+    cell.detailTextLabel.text = ([friend.sectionNum isEqual: @(0)]) ? @"在线" :  ([friend.sectionNum isEqual: @(1)]) ? @"离开" : @"离线";
+    
+//    cell.detailTextLabel.text = friend.jidStr;
     
     return cell;
 }
@@ -85,5 +111,13 @@
     return 0.01;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    XMPPUserCoreDataStorageObject *friend = self.resultController.fetchedObjects[indexPath.row];
+    [[WCXMPPTool sharedWCXMPPTool].roster removeUser:friend.jid];
+    
+    
+}
 
 @end

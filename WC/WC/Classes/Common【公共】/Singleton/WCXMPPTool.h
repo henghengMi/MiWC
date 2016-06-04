@@ -27,6 +27,8 @@ typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
 
 @property (copy, nonatomic)XMPPLoginResultBlock loginResultBlock;
 
+@property(nonatomic, strong) XMPPStream  * xmppStream;
+
 /**
  *  注册标识 YES 注册 / NO 登录
  */
@@ -35,8 +37,12 @@ typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
 /** 电子名片 **/
 @property(nonatomic, strong) XMPPvCardTempModule *vCard; // 电子名片
 
-/** 花名册 **/
+// 花名册
+@property(nonatomic, strong) XMPPRoster *roster; // 花名册
+
+/** 花名册数据库 **/
 @property(nonatomic, strong) XMPPRosterCoreDataStorage *rosterStorage; // 花名册数据存储
+
 
 -(void)logout;
 

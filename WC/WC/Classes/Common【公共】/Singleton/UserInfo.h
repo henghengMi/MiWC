@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "Singleton.h"
-
+static NSString *domain = @"hengheng.local";
 @interface UserInfo : NSObject
+
 
 singleton_interface(UserInfo);
 

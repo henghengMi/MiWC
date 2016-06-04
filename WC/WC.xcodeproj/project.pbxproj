@@ -10,6 +10,7 @@
 		0C53C0A41CFD392300D7B46C /* WCUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0A31CFD392300D7B46C /* WCUserInfoController.m */; };
 		0C53C0A71CFD683B00D7B46C /* WCVCarEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */; };
 		0C53C0AD1CFD8A3900D7B46C /* WCContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53C0AC1CFD8A3900D7B46C /* WCContactController.m */; };
+		0CA58CF51D017CA400FF4CBB /* WCAddContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA58CF41D017CA400FF4CBB /* WCAddContactController.m */; };
 		0CE5E7201CF83D9900F57D66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE5E71F1CF83D9900F57D66 /* main.m */; };
 		0CE5E7291CF83D9900F57D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E7271CF83D9900F57D66 /* Main.storyboard */; };
 		0CE5E72B1CF83D9900F57D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE5E72A1CF83D9900F57D66 /* Assets.xcassets */; };
@@ -192,6 +193,8 @@
 		0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCVCarEditController.m; sourceTree = "<group>"; };
 		0C53C0AB1CFD8A3900D7B46C /* WCContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCContactController.h; sourceTree = "<group>"; };
 		0C53C0AC1CFD8A3900D7B46C /* WCContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCContactController.m; sourceTree = "<group>"; };
+		0CA58CF31D017CA400FF4CBB /* WCAddContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAddContactController.h; sourceTree = "<group>"; };
+		0CA58CF41D017CA400FF4CBB /* WCAddContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAddContactController.m; sourceTree = "<group>"; };
 		0CE5E71B1CF83D9800F57D66 /* WC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE5E71F1CF83D9900F57D66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0CE5E7281CF83D9900F57D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1442,6 +1445,8 @@
 				0C53C0A31CFD392300D7B46C /* WCUserInfoController.m */,
 				0C53C0A51CFD683B00D7B46C /* WCVCarEditController.h */,
 				0C53C0A61CFD683B00D7B46C /* WCVCarEditController.m */,
+				0CA58CF31D017CA400FF4CBB /* WCAddContactController.h */,
+				0CA58CF41D017CA400FF4CBB /* WCAddContactController.m */,
 			);
 			path = "Main【主要】";
 			sourceTree = "<group>";
@@ -1701,6 +1706,7 @@
 				0CE5E90B1CF83FB900F57D66 /* NSXMLElement+XEP_0335.m in Sources */,
 				0CE5E8D31CF83FB900F57D66 /* XMPPMessage+XEP0045.m in Sources */,
 				0CE5E8E71CF83FB900F57D66 /* TURNSocket.m in Sources */,
+				0CA58CF51D017CA400FF4CBB /* WCAddContactController.m in Sources */,
 				0CE5E8B71CF83FB900F57D66 /* XMPPReconnect.m in Sources */,
 				0CE5E8DA1CF83FB900F57D66 /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
 				0CE5E8DF1CF83FB900F57D66 /* XMPPvCardTempEmail.m in Sources */,

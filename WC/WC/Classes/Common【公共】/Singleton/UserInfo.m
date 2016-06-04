@@ -12,7 +12,7 @@
 #define pswKey @"psw"
 #define loginStatusKey @"loginStatus"
 
-static NSString *domain = @"hengheng.local";
+
 
 @implementation UserInfo
 
