@@ -114,11 +114,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     XMPPUserCoreDataStorageObject *friend = self.resultController.fetchedObjects[indexPath.row];
     [[WCXMPPTool sharedWCXMPPTool].roster removeUser:friend.jid];
-    
-    
 }
 
 
@@ -127,11 +124,8 @@
      XMPPUserCoreDataStorageObject *friend = self.resultController.fetchedObjects[indexPath.row];
     XMPPJID  *friendJid = friend.jid;
 //    WCChatViewController *chatVC = [WCChatViewController new];
-//    
 //    [self.navigationController pushViewController:chatVC animated:YES];
-    
     [self performSegueWithIdentifier:@"chatSegue" sender:friendJid];
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

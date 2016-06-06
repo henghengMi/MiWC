@@ -34,38 +34,40 @@
 #pragma mark 加载个人信息
 - (void)loadVCarInfo
 {
-    XMPPvCardTemp * myvCar = [WCXMPPTool sharedWCXMPPTool].vCard.myvCardTemp;
+    XMPPvCardTemp * myVCard = [WCXMPPTool sharedWCXMPPTool].vCard.myvCardTemp;
     
     // 头像
-    if (myvCar.photo) {
-        self.iconImageView.image = [UIImage imageWithData:myvCar.photo];
+    if (myVCard.photo) {
+        self.iconImageView.image = [UIImage imageWithData:myVCard.photo];
     }
     
     // 昵称
-    self.nickName.text = myvCar.nickname;
+    self.nickName.text = myVCard.nickname;
     
     // 微信号
     self.wcNum.text = [UserInfo sharedUserInfo].account;
     
     // 公司
-    self.company.text = myvCar.orgName;
+    self.company.text = myVCard.orgName;
     
     // 部门
-    if (myvCar.orgUnits.count) {
-        self.department.text = myvCar.orgUnits[0];
+    if (myVCard.orgUnits.count) {
+        self.department.text = myVCard.orgUnits[0];
     }
     
     // 职位
-    self.job.text = myvCar.title;
+    self.job.text = myVCard.title;
     
     // 电话 （没解析）  获取不到电话
     // 使用Note字段充当电话
-    self.phone.text = myvCar.note;
+    self.phone.text = myVCard.note;
     
-    // 使用mailer充当邮件
-    self.email.text = myvCar.mailer;
+    //邮件解析   //不管有多少个邮件，只取第一个
+    if (myVCard.emailAddresses.count > 0) self.email.text = myVCard.emailAddresses[0];
+
 }
 
+#pragma mark tableviewtalegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -141,27 +143,32 @@
 - (void)editUserInfoToUpdate
 {
     // 更新（上传服务器）
-    XMPPvCardTemp *myVCar = [WCXMPPTool sharedWCXMPPTool].vCard.myvCardTemp;
+    XMPPvCardTemp *myVCard = [WCXMPPTool sharedWCXMPPTool].vCard.myvCardTemp;
     // 图片
-    myVCar.photo = UIImagePNGRepresentation(self.iconImageView.image );
+    myVCard.photo = UIImagePNGRepresentation(self.iconImageView.image );
     
     // 昵称
-    myVCar.nickname = self.nickName.text;
+    myVCard.nickname = self.nickName.text;
     // 公司
-    myVCar.orgName = self.company.text;
+    myVCard.orgName = self.company.text;
     // 部门
     if(self.department.text.length > 0) {
-        myVCar.orgUnits = @[self.department.text];
+        myVCard.orgUnits = @[self.department.text];
     }
     // 职位
-    myVCar.title = self.job.text;
+    myVCard.title = self.job.text;
     // 电话
-    myVCar.note = self.phone.text;
+    myVCard.note = self.phone.text;
     // 邮件
-    myVCar.mailer = self.email.text;
+    if (myVCard.emailAddresses.count > 0) {
+//        self.email.text = myVCard.emailAddresses[90];
+        myVCard.emailAddresses = @[self.email.text];
+    }
+//    myVCard.emailAddresses = self.email.text;
     
     // 上传更新 自动上传至服务器 无需客户端操作
-    [[WCXMPPTool sharedWCXMPPTool].vCard updateMyvCardTemp:myVCar];
+//    [[WCXMPPTool sharedWCXMPPTool].vCard updatemyVCarddTemp:myVCard];
+    [[WCXMPPTool sharedWCXMPPTool].vCard updateMyvCardTemp:myVCard];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -177,6 +184,7 @@
     }
 }
 
+#pragma mark 保存成功代理回调
 - (void)saveUserInfoSuccess
 {
     [self editUserInfoToUpdate];
