@@ -34,14 +34,16 @@ typedef void (^XMPPLoginResultBlock) (XMPPLoginStatus status);
  */
 @property (nonatomic, assign,getter=isRegisterOperation) BOOL  registerOperation;//注册操作
 
-/** 电子名片 **/
-@property(nonatomic, strong) XMPPvCardTempModule *vCard; // 电子名片
+@property(nonatomic, strong, readonly) XMPPvCardTempModule *vCard; // 电子名片
 
-// 花名册
-@property(nonatomic, strong) XMPPRoster *roster; // 花名册
+@property(nonatomic, strong, readonly) XMPPRoster *roster; // 花名册
 
-/** 花名册数据库 **/
-@property(nonatomic, strong) XMPPRosterCoreDataStorage *rosterStorage; // 花名册数据存储
+@property(nonatomic, strong, readonly) XMPPRosterCoreDataStorage *rosterStorage; // 花名册数据存储
+
+@property(nonatomic, strong, readonly) XMPPMessageArchivingCoreDataStorage *msgStorage; // 消息数据存储
+
+
+
 
 
 -(void)logout;

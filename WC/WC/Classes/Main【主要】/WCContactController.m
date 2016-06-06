@@ -8,6 +8,7 @@
 
 #import "WCContactController.h"
 #import "WCXMPPTool.h"
+#import "WCChatViewController.h"
 
 @interface WCContactController ()<NSFetchedResultsControllerDelegate>
 @property(nonatomic, strong) NSArray * friends;
@@ -118,6 +119,28 @@
     [[WCXMPPTool sharedWCXMPPTool].roster removeUser:friend.jid];
     
     
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     XMPPUserCoreDataStorageObject *friend = self.resultController.fetchedObjects[indexPath.row];
+    XMPPJID  *friendJid = friend.jid;
+//    WCChatViewController *chatVC = [WCChatViewController new];
+//    
+//    [self.navigationController pushViewController:chatVC animated:YES];
+    
+    [self performSegueWithIdentifier:@"chatSegue" sender:friendJid];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    id desVC = segue.destinationViewController;
+    if ([desVC isKindOfClass:[WCChatViewController class]]) {
+        WCChatViewController *chatVC = (WCChatViewController *)desVC;
+        chatVC.friendJid = sender;
+    }
 }
 
 @end

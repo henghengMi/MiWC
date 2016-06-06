@@ -21,6 +21,7 @@
 #import "MBProgressHUD+MJ.h"
 
 #import "WCXMPPTool.h"
+#import "UIImageView+WebCache.h"
 
 /** 数据本地化 */
 #define USERDEFAULTS [NSUserDefaults standardUserDefaults]

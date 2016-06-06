@@ -17,11 +17,9 @@
     XMPPvCardCoreDataStorage *_vCardStorage; // 电子名片的数据存储
     XMPPvCardAvatarModule *_vCardAvatar; // 头像模块
     XMPPReconnect *_reconnect; // 自动连接模块
-    XMPPMessageArchiving *_msgArchiving;
-    XMPPMessageArchivingCoreDataStorage *_msgStorage;
+    XMPPMessageArchiving *_msgArchiving; // 消息模块
+
 }
-
-
 
 // 1. 初始化XMPPStream
 -(void)setupXMPPStream;
@@ -245,6 +243,7 @@ singleton_implementation(WCXMPPTool)
 {
     // 移除代理
     [_xmppStream removeDelegate:self];
+    
     // 停止模块
     [_reconnect deactivate];
     [_vCard deactivate];
